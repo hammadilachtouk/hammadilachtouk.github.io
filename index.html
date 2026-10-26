@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Portfolio Hammadi Lachtouk</title>
+  <meta name="description" content="Hammadi Lachtouk, technicien informatique et réseaux à Casablanca : Windows Server, Active Directory, TCP/IP, maintenance.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=JetBrains+Mono:wght@400;600&family=Source+Sans+3:wght@400;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Active les animations avant l'affichage ; les désactive si le script principal ne se charge pas -->
+  <script>
+    (function (d) {
+      if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      d.classList.add("anim");
+      setTimeout(function () { if (!window.__animReady) d.classList.remove("anim"); }, 2500);
+    })(document.documentElement);
+  </script>
+</head>
+<body>
+
+  <!-- ===================== EN-TÊTE ===================== -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#apropos" aria-label="Hammadi Lachtouk">
+        <span class="brand-mark">HL</span>
+        <span class="brand-name">Hammadi Lachtouk</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul class="nav-list" id="nav-list">
+          <li><a href="#apropos" data-i18n="nav.about">À propos</a></li>
+          <li><a href="#competences" data-i18n="nav.skills">Compétences</a></li>
+          <li><a href="#experience" data-i18n="nav.experience">Expérience</a></li>
+          <li><a href="#engagement" data-i18n="nav.engagement">Engagement</a></li>
+          <li><a href="#projets" data-i18n="nav.projects">Projets</a></li>
+          <li><a href="#formation" data-i18n="nav.education">Formation</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-tools">
+        <div class="lang-switch" role="group" aria-label="Langue / Language">
+          <button type="button" id="lang-fr" data-lang="fr" aria-pressed="true">FR</button>
+          <button type="button" id="lang-en" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button type="button" class="icon-btn" id="palette-toggle" data-i18n-attr="aria-label:ui.palette;title:ui.palette" aria-label="Changer le style" title="Changer le style">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.2 0 1.8-.8 1.8-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-1 .8-1.7 1.7-1.7H16a5 5 0 0 0 5-5C21 6.3 17 3 12 3z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10" cy="7" r="1.2"/><circle cx="14.5" cy="7" r="1.2"/></svg>
+        </button>
+        <button type="button" class="icon-btn" id="theme-toggle" data-i18n-attr="aria-label:ui.theme" aria-label="Changer de thème">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+        </button>
+        <button type="button" class="icon-btn menu-btn" id="menu-toggle" aria-controls="nav-list" aria-expanded="false" data-i18n-attr="aria-label:ui.menu" aria-label="Ouvrir le menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <span class="scroll-progress" aria-hidden="true"></span>
+  </header>
+
+  <main>
+
+    <!-- ===================== ACCUEIL / À PROPOS ===================== -->
+    <section class="hero" id="apropos">
+      <div class="wrap hero-grid">
+        <div class="hero-text">
+          <p class="status"><span class="led" aria-hidden="true"></span><span data-i18n="hero.status">Ouvert aux opportunités · Casablanca</span></p>
+
+          <h1 aria-label="Hammadi Lachtouk"><span class="h1-first" aria-hidden="true" data-scramble>Hammadi</span><span class="h1-last" aria-hidden="true" data-scramble>Lachtouk</span></h1>
+          <p class="role" data-i18n="hero.role" data-typing>Technicien Informatique &amp; Réseaux</p>
+          <p class="lead" data-i18n="hero.summary">Technicien informatique et réseaux en formation, actuellement en stage de maintenance chez CBI. Compétent en administration Windows Server, en réseaux TCP/IP et en support aux utilisateurs. Fiable et autonome, je souhaite rejoindre une équipe IT pour mettre mes compétences en pratique et continuer à progresser.</p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#contact" data-i18n="hero.cta.contact">Me contacter</a>
+            <a class="btn btn-ghost" href="#projets" data-i18n="hero.cta.projects">Voir mes projets</a>
+            <!-- Lien vers le CV : retirez ce bloc si vous ne publiez pas le PDF -->
+            <a class="btn btn-ghost" href="CV_Hammadi_LACHTOUK_EN.pdf" target="_blank" rel="noopener" data-local-only data-i18n="hero.cta.cv">CV (PDF, anglais)</a>
+          </div>
+
+          <figure class="t568b">
+            <div class="t568b-pairs" aria-hidden="true">
+              <span class="pin w-orange"></span><span class="pin orange"></span>
+              <span class="pin w-green"></span><span class="pin blue"></span>
+              <span class="pin w-blue"></span><span class="pin green"></span>
+              <span class="pin w-brown"></span><span class="pin brown"></span>
+            </div>
+            <figcaption data-i18n="hero.t568b">Câblage RJ45, norme T568B</figcaption>
+          </figure>
+        </div>
+
+        <figure class="portrait">
+          <span class="portrait-disc" aria-hidden="true"></span>
+          <img src="portrait.webp" onerror="this.onerror=null;this.src='assets/portrait.webp'" alt="Portrait de Hammadi Lachtouk" data-i18n-attr="alt:hero.photoAlt" width="780" height="880">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===================== TERMINAL ===================== -->
+    <section class="section console" id="console" aria-labelledby="console-title">
+      <div class="wrap console-grid">
+        <header class="section-head" data-reveal="head">
+          <h2 id="console-title" data-i18n="console.title">En ligne de commande</h2>
+          <p data-i18n="console.intro">Un petit terminal PowerShell pour découvrir mon profil. Tapez une commande ou utilisez les raccourcis.</p>
+        </header>
+
+        <!-- Terminal interactif : tapez « help » -->
+        <div class="term" id="terminal" data-reveal="window">
+          <div class="term-bar">
+            <span class="term-title">Windows PowerShell</span>
+            <span class="term-ctrl" aria-hidden="true"><i>&#8212;</i><i>&#9633;</i><i>&#10005;</i></span>
+          </div>
+          <div class="term-body" id="term-body">
+            <div class="term-out" id="term-out" aria-live="polite">
+              <p><span class="t-prompt">PS C:\Users\Hammadi&gt;</span> whoami</p>
+              <p>casablanca\hammadi · technicien informatique &amp; réseaux</p>
+              <p><span class="t-prompt">PS C:\Users\Hammadi&gt;</span> ping recruteur</p>
+              <p class="t-ok">Réponse de hammadi : temps&lt;1ms, disponible pour rejoindre une équipe IT</p>
+              <p class="t-dim">Tapez help pour voir les commandes.</p>
+            </div>
+            <form class="term-line" id="term-form" autocomplete="off">
+              <label class="t-prompt" for="term-input">PS C:\Users\Hammadi&gt;</label>
+              <input id="term-input" type="text" spellcheck="false" autocapitalize="off" data-i18n-attr="aria-label:term.input;placeholder:term.placeholder" aria-label="Commande du terminal" placeholder="help">
+            </form>
+          </div>
+          <div class="term-chips" aria-label="Commandes rapides">
+            <button type="button" data-cmd="ipconfig">ipconfig</button>
+            <button type="button" data-cmd="skills">skills</button>
+            <button type="button" data-cmd="contact">contact</button>
+            <button type="button" data-cmd="cls">cls</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== COMPÉTENCES ===================== -->
+    <section class="section" id="competences">
+      <div class="wrap">
+        <header class="section-head" data-reveal="head">
+          <h2 data-i18n="skills.title">Compétences</h2>
+          <p data-i18n="skills.intro">Les outils et domaines que je pratique en formation et en stage.</p>
+        </header>
+
+        <div class="skill-grid" data-reveal="skills">
+          <div class="skill-group">
+            <h3 data-i18n="skills.systems">Systèmes</h3>
+            <ul class="tags"><li>Windows</li><li>Windows Server</li><li>Active Directory</li><li>GPO</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3 data-i18n="skills.network">Réseaux</h3>
+            <ul class="tags"><li>TCP/IP</li><li>IPv4</li><li>DNS</li><li>DHCP</li><li>LAN</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3 data-i18n="skills.virtual">Virtualisation</h3>
+            <ul class="tags"><li>VMware Workstation</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3 data-i18n="skills.maintenance">Maintenance</h3>
+            <ul class="tags">
+              <li data-i18n="skills.m1">Matériel</li><li data-i18n="skills.m2">Installation</li>
+              <li data-i18n="skills.m3">Diagnostic</li><li data-i18n="skills.m4">Dépannage</li>
+              <li data-i18n="skills.m5">Imprimantes</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 data-i18n="skills.office">Bureautique</h3>
+            <ul class="tags"><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3 data-i18n="skills.design">Design graphique</h3>
+            <ul class="tags"><li>Photoshop</li><li>Illustrator</li><li>Canva</li><li data-i18n="skills.photo">Photographie</li><li data-i18n="skills.video">Vidéo</li></ul>
+          </div>
+        </div>
+
+        <div class="profile-grid" data-reveal="profile">
+          <div class="profile-col">
+            <h3 data-i18n="lang.title">Langues</h3>
+            <ul class="cefr-list">
+              <li>
+                <div class="cefr-head"><span data-i18n="lang.ar">Arabe</span><span class="cefr-level" data-i18n="lang.native">Langue maternelle</span></div>
+                <div class="cefr" data-level="6" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              </li>
+              <li>
+                <div class="cefr-head"><span data-i18n="lang.fr">Français</span><span class="cefr-level">B2</span></div>
+                <div class="cefr" data-level="4" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              </li>
+              <li>
+                <div class="cefr-head"><span data-i18n="lang.en">Anglais</span><span class="cefr-level">B2</span></div>
+                <div class="cefr" data-level="4" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              </li>
+            </ul>
+            <p class="cefr-scale" aria-hidden="true"><span>A1</span><span>A2</span><span>B1</span><span>B2</span><span>C1</span><span>C2</span></p>
+            <p class="note" data-i18n="lang.note">Niveaux selon le Cadre européen commun de référence (CECRL).</p>
+          </div>
+
+          <div class="profile-col">
+            <h3 data-i18n="strengths.title">Qualités</h3>
+            <ul class="plain-list">
+              <li data-i18n="strengths.1">Organisé et méthodique</li>
+              <li data-i18n="strengths.2">Fiable et responsable</li>
+              <li data-i18n="strengths.3">Esprit d'équipe, empathique</li>
+            </ul>
+          </div>
+
+          <div class="profile-col">
+            <h3 data-i18n="interests.title">Centres d'intérêt</h3>
+            <ul class="plain-list">
+              <li data-i18n="interests.1">Nouvelles technologies</li>
+              <li data-i18n="interests.2">Photographie</li>
+              <li data-i18n="interests.3">Football et sports collectifs</li>
+              <li data-i18n="interests.4">Randonnée</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EXPÉRIENCE ===================== -->
+    <section class="section band" id="experience">
+      <div class="wrap">
+        <header class="section-head" data-reveal="head">
+          <h2 data-i18n="exp.title">Expérience professionnelle</h2>
+        </header>
+
+        <ol class="timeline">
+          <li class="job" data-reveal="job">
+            <p class="job-date" data-i18n="exp.1.date">Sept. 2026 – aujourd'hui</p>
+            <div class="job-body">
+              <h3 data-i18n="exp.1.role">Technicien de maintenance d'imprimantes (stagiaire)</h3>
+              <p class="job-org">CBI <span class="chip chip-live" data-i18n="exp.current">En cours</span></p>
+              <ul>
+                <li data-i18n="exp.1.b1">Diagnostiquer et réparer les pannes matérielles et logicielles des imprimantes</li>
+                <li data-i18n="exp.1.b2">Assurer la maintenance préventive et corrective (nettoyage, remplacement de pièces, réglages)</li>
+                <li data-i18n="exp.1.b3">Installer et configurer des imprimantes réseau (pilotes, adresses IP)</li>
+                <li data-i18n="exp.1.b4">Intervenir sur site et suivre les demandes de réparation des clients</li>
+              </ul>
+            </div>
+          </li>
+          <li class="job" data-reveal="job">
+            <p class="job-date" data-i18n="exp.2.date">2021 – aujourd'hui</p>
+            <div class="job-body">
+              <h3 data-i18n="exp.2.role">Professeur de français et d'anglais</h3>
+              <p class="job-org" data-i18n="exp.2.org">École de soutien scolaire</p>
+              <ul>
+                <li data-i18n="exp.2.b1">Préparer et animer des cours adaptés au niveau de chaque élève</li>
+                <li data-i18n="exp.2.b2">Expliquer clairement des notions complexes et accompagner la progression des élèves</li>
+              </ul>
+            </div>
+          </li>
+          <li class="job" data-reveal="job">
+            <p class="job-date" data-i18n="exp.3.date">Juin – août 2025</p>
+            <div class="job-body">
+              <h3 data-i18n="exp.3.role">Caissier</h3>
+              <p class="job-org">Pomme de Pain</p>
+              <ul>
+                <li data-i18n="exp.3.b1">Accueillir les clients et gérer la caisse en respectant les procédures</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== ENGAGEMENT ===================== -->
+    <section class="section" id="engagement">
+      <div class="wrap">
+        <header class="section-head" data-reveal="head">
+          <h2 data-i18n="eng.title">Engagement</h2>
+          <p data-i18n="eng.intro">Prises de parole, formations et activités avec le monde associatif.</p>
+        </header>
+
+        <article class="event" data-reveal="fade">
+          <figure class="event-media">
+            <img src="pathways-talks.jpg" onerror="this.onerror=null;this.src='assets/pathways-talks.jpg'" alt="Hammadi Lachtouk prend la parole au micro lors des PathwaysTalks" data-i18n-attr="alt:eng.1.alt" width="1800" height="1135" loading="lazy">
+            <figcaption class="event-tag">More with EU+Morocco Partnership · #BeMore</figcaption>
+          </figure>
+          <div class="event-body">
+            <p class="event-org"><span data-i18n="eng.1.org">Union européenne au Maroc</span> · Association Al Jisr</p>
+            <h3 data-i18n="eng.1.title">Intervenant aux PathwaysTalks</h3>
+            <p class="event-session" data-i18n="eng.1.session">Session « Insertion des jeunes et employabilité »</p>
+            <p data-i18n="eng.1.text">Invité en tant que bénéficiaire de l'association Al Jisr, j'ai représenté l'association sur scène lors des PathwaysTalks organisés par l'Union européenne au Maroc. J'y ai témoigné de mon parcours de formation et d'insertion professionnelle devant un public de jeunes, d'experts et de partenaires.</p>
+            <ul class="tags">
+              <li data-i18n="eng.1.t1">Insertion des jeunes</li>
+              <li data-i18n="eng.1.t2">Employabilité</li>
+              <li data-i18n="eng.1.t3">Formation professionnelle</li>
+              <li data-i18n="eng.1.t4">Prise de parole</li>
+            </ul>
+            <a class="event-link" href="https://www.instagram.com/p/Dee167ZDUkK/" target="_blank" rel="noopener"><span data-i18n="eng.1.link">Voir la publication sur Instagram</span> <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <article class="event event--reverse" data-reveal="fade">
+          <figure class="event-media">
+            <img src="ceet-for-neet.jpg" onerror="this.onerror=null;this.src='assets/ceet-for-neet.jpg'" alt="Hammadi Lachtouk reçoit son certificat du bootcamp CEET for NEET" data-i18n-attr="alt:eng.2.alt" width="1159" height="1287" loading="lazy" style="object-position: 40% 8%">
+            <figcaption class="event-tag" data-i18n="eng.2.tag">Certificat obtenu · 25 oct. 2026</figcaption>
+          </figure>
+          <div class="event-body">
+            <p class="event-org">Youth for Challenge · BIDAYA · Global Platform Morocco</p>
+            <h3 data-i18n="eng.2.title">Bootcamp CEET for NEET</h3>
+            <p class="event-session" data-i18n="eng.2.session">Insertion professionnelle des jeunes · Casablanca</p>
+            <p data-i18n="eng.2.text">Bootcamp « Training Enhancing Capacities » consacré à l'entrée dans le monde du travail. J'y ai appris à rédiger un CV adapté aux attentes des recruteurs, à construire un portfolio professionnel et à créer, développer et animer un profil LinkedIn. Le programme couvrait aussi la préparation aux entretiens, les compétences digitales, l'usage de l'IA pour la recherche d'emploi et l'entrepreneuriat.</p>
+            <ul class="tags">
+              <li data-i18n="eng.2.t1">CV</li>
+              <li data-i18n="eng.2.t2">Portfolio</li>
+              <li>LinkedIn</li>
+              <li data-i18n="eng.2.t3">Entretiens</li>
+              <li data-i18n="eng.2.t4">Compétences digitales</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="event" data-reveal="fade">
+          <figure class="event-media event-media--slides">
+            <img class="slide is-active" src="casamemoire-interview.jpg" onerror="this.onerror=null;this.src='assets/casamemoire-interview.jpg'" alt="Tournage de l'interview de Rabea Ridaoui, ancienne présidente de Casamémoire" data-i18n-attr="alt:eng.3.alt2" width="1200" height="1600" loading="lazy" style="object-position: 50% 72%">
+            <img class="slide" src="photographe-benevole.jpg" onerror="this.onerror=null;this.src='assets/photographe-benevole.jpg'" alt="Hammadi Lachtouk filme une interview avec un appareil photo sur trépied" data-i18n-attr="alt:eng.3.alt" width="1079" height="1125" loading="lazy" style="object-position: 50% 40%">
+            <div class="slide-dots" role="group" data-i18n-attr="aria-label:ui.photos" aria-label="Photos">
+              <button type="button" aria-pressed="true" aria-label="Photo 1"></button>
+              <button type="button" aria-pressed="false" aria-label="Photo 2"></button>
+            </div>
+            <figcaption class="event-tag" data-i18n="eng.3.tag">2 attestations obtenues</figcaption>
+          </figure>
+          <div class="event-body">
+            <p class="event-org">Al Jisr · Cinéastes Sans Frontières · Casamémoire</p>
+            <h3 data-i18n="eng.3.title">Photographe et vidéaste bénévole</h3>
+            <p class="event-session" data-i18n="eng.3.session">Série d'interviews « Personne inspirante » · Casablanca, 2026</p>
+            <p data-i18n="eng.3.text">Formé aux techniques audiovisuelles et à la réalisation d'interviews par Cinéastes Sans Frontières (projet Inspiring), j'ai filmé et mené les interviews du rendez-vous « Personne inspirante » de l'association Al Jisr. Avec Sami, autre bénéficiaire, j'ai notamment interviewé Rabea Ridaoui, membre et ancienne présidente de Casamémoire, sur la sauvegarde du patrimoine architectural du Maroc, puis El Mehdi, doctorant passionné d'astronomie et fondateur du Club Assif.</p>
+            <ul class="tags">
+              <li data-i18n="eng.3.t1">Tournage d'interviews</li>
+              <li data-i18n="eng.3.t2">Photographie</li>
+              <li data-i18n="eng.3.t3">Patrimoine</li>
+              <li data-i18n="eng.3.t4">Bénévolat</li>
+            </ul>
+            <p class="event-cert" data-i18n="eng.3.cert">Attestation Cinéastes Sans Frontières, 6 août 2026 · Attestation Casamémoire</p>
+            <p class="event-links">
+              <a class="event-link" href="https://www.instagram.com/p/Dc3JiCTCGqh/" target="_blank" rel="noopener"><span data-i18n="eng.3.link1">Publication Instagram 1</span> <span aria-hidden="true">→</span></a>
+              <a class="event-link" href="https://www.instagram.com/p/DbD_a6ziGBx/" target="_blank" rel="noopener"><span data-i18n="eng.3.link2">Publication Instagram 2</span> <span aria-hidden="true">→</span></a>
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== PROJETS ===================== -->
+    <section class="section band" id="projets">
+      <div class="wrap">
+        <header class="section-head" data-reveal="head">
+          <h2 data-i18n="proj.title">Projets</h2>
+          <p data-i18n="proj.intro">Travaux pratiques réalisés en formation et missions de stage.</p>
+        </header>
+
+        <div class="filters" data-reveal="fade" role="group" data-i18n-attr="aria-label:proj.filter" aria-label="Filtrer les projets">
+          <button type="button" data-filter="all" aria-pressed="true" data-i18n="proj.f.all">Tous</button>
+          <button type="button" data-filter="systems" aria-pressed="false" data-i18n="skills.systems">Systèmes</button>
+          <button type="button" data-filter="network" aria-pressed="false" data-i18n="skills.network">Réseaux</button>
+          <button type="button" data-filter="maintenance" aria-pressed="false" data-i18n="skills.maintenance">Maintenance</button>
+          <button type="button" data-filter="design" aria-pressed="false" data-i18n="proj.f.design">Design</button>
+        </div>
+
+        <div class="project-grid" id="project-grid" data-reveal="projects">
+          <article class="project" data-cat="systems">
+            <div class="project-top"><span class="project-cat" data-i18n="skills.systems">Systèmes</span></div>
+            <h3 data-i18n="proj.1.title">Domaine Active Directory en lab</h3>
+            <p data-i18n="proj.1.text">Contrôleur de domaine Windows Server sous VMware Workstation : unités d'organisation, comptes et groupes d'utilisateurs, stratégies de groupe (GPO) appliquées aux postes clients.</p>
+            <p class="spec">Windows Server · AD DS · GPO · VMware</p>
+          </article>
+
+          <article class="project" data-cat="network">
+            <div class="project-top"><span class="project-cat" data-i18n="skills.network">Réseaux</span></div>
+            <h3 data-i18n="proj.2.title">Services DHCP et DNS</h3>
+            <p data-i18n="proj.2.text">Étendue DHCP avec exclusions et réservations, zones DNS directe et inverse, puis vérification de la résolution de noms depuis les postes clients.</p>
+            <p class="spec">DHCP · DNS · nslookup · ipconfig /all</p>
+          </article>
+
+          <article class="project" data-cat="network">
+            <div class="project-top"><span class="project-cat" data-i18n="skills.network">Réseaux</span></div>
+            <h3 data-i18n="proj.3.title">Plan d'adressage IPv4</h3>
+            <p data-i18n="proj.3.text">Découpage d'un réseau /24 en quatre sous-réseaux pour séparer les services d'une petite entreprise, avec tableau d'adressage et tests de connectivité.</p>
+            <p class="spec">192.168.10.0/24 → 4 × /26 (62 hôtes)</p>
+          </article>
+
+          <article class="project" data-cat="maintenance">
+            <div class="project-top"><span class="project-cat" data-i18n="skills.maintenance">Maintenance</span><span class="chip chip-live" data-i18n="proj.internship">Stage CBI</span></div>
+            <h3 data-i18n="proj.4.title">Mise en service d'imprimantes réseau</h3>
+            <p data-i18n="proj.4.text">Installation des pilotes, attribution des adresses IP et mise en service d'imprimantes réseau chez les clients, puis suivi des demandes de réparation.</p>
+            <p class="spec" data-i18n="proj.4.spec">Pilotes · Adresse IP fixe · Intervention sur site</p>
+          </article>
+
+          <article class="project" data-cat="maintenance">
+            <div class="project-top"><span class="project-cat" data-i18n="skills.maintenance">Maintenance</span></div>
+            <h3 data-i18n="proj.5.title">Remise en état d'un poste de travail</h3>
+            <p data-i18n="proj.5.text">Diagnostic d'un PC lent : contrôle du matériel, réinstallation de Windows, des pilotes et de la suite bureautique, puis restitution à l'utilisateur.</p>
+            <p class="spec" data-i18n="proj.5.spec">Matériel · Windows · Pilotes · Office</p>
+          </article>
+
+          <article class="project" data-cat="design">
+            <div class="project-top"><span class="project-cat" data-i18n="proj.f.design">Design</span></div>
+            <h3 data-i18n="proj.6.title">Supports graphiques</h3>
+            <p data-i18n="proj.6.text">Affiches et visuels pour les réseaux sociaux réalisés pendant le diplôme de design graphique à l'ANIG.</p>
+            <p class="spec">Photoshop · Illustrator · Canva</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FORMATION ===================== -->
+    <section class="section" id="formation">
+      <div class="wrap">
+        <header class="section-head" data-reveal="head">
+          <h2 data-i18n="edu.title">Formation</h2>
+        </header>
+
+        <div class="edu-grid" data-reveal="edu">
+          <article class="edu">
+            <p class="edu-date"><span class="chip chip-live" data-i18n="edu.inprogress">En cours</span></p>
+            <h3 data-i18n="edu.1.title">Technicien Informatique &amp; Réseaux</h3>
+            <p class="edu-school">Association AJISR · Casablanca</p>
+          </article>
+          <article class="edu">
+            <p class="edu-date">2025 – 2026</p>
+            <h3 data-i18n="edu.2.title">Diplôme en design graphique</h3>
+            <p class="edu-school">ANIG · Casablanca</p>
+          </article>
+          <article class="edu">
+            <p class="edu-date">2021</p>
+            <h3 data-i18n="edu.3.title">Technicien spécialisé en gestion des entreprises</h3>
+            <p class="edu-school">ISTA · Azemmour</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section band contact" id="contact">
+      <div class="wrap contact-grid">
+        <header class="section-head" data-reveal="head">
+          <h2 data-i18n="contact.title">Contact</h2>
+          <p data-i18n="contact.intro">Vous avez un stage ou un poste en informatique à pourvoir ? Écrivez-moi ou appelez-moi.</p>
+        </header>
+
+        <ul class="contact-list" data-reveal="contact">
+          <li class="contact-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" pathLength="1"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5" pathLength="1"/></svg>
+            <div class="contact-body">
+              <span class="contact-label" data-i18n="contact.email">E-mail</span>
+              <a class="contact-value" href="mailto:hammadi.lachtouk.work@gmail.com">hammadi.lachtouk.work@gmail.com</a>
+            </div>
+            <button type="button" class="copy-btn" data-copy="hammadi.lachtouk.work@gmail.com" data-i18n="ui.copy">Copier</button>
+          </li>
+          <li class="contact-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5h3l1.5 4-2 1.3a11 11 0 0 0 6.1 6.1l1.3-2 4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2z" pathLength="1"/></svg>
+            <div class="contact-body">
+              <span class="contact-label" data-i18n="contact.phone">Téléphone</span>
+              <a class="contact-value" href="tel:+212633989229">+212 633 98 92 29</a>
+            </div>
+            <button type="button" class="copy-btn" data-copy="+212 633 98 92 29" data-i18n="ui.copy">Copier</button>
+          </li>
+          <li class="contact-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1 1" pathLength="1"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1" pathLength="1"/></svg>
+            <div class="contact-body">
+              <span class="contact-label">LinkedIn</span>
+              <a class="contact-value" href="https://www.linkedin.com/in/hammadi-lachtouk-8a3379430" target="_blank" rel="noopener">linkedin.com/in/hammadi-lachtouk-8a3379430</a>
+            </div>
+          </li>
+          <li class="contact-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11z" pathLength="1"/><circle cx="12" cy="10" r="2.3" pathLength="1"/></svg>
+            <div class="contact-body">
+              <span class="contact-label" data-i18n="contact.address">Adresse</span>
+              <span class="contact-value" data-i18n="contact.addressValue">Hay El Masjid, Lissasfa, Casablanca, Maroc</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="palette-toast" id="palette-toast" role="status" aria-live="polite"></p>
+    <div class="wrap footer-inner">
+      <p>© <span id="year">2026</span> Hammadi Lachtouk</p>
+      <p data-i18n="footer.made">Site réalisé en HTML, CSS et JavaScript</p>
+    </div>
+  </footer>
+
+  <script src="script.js" onerror="var s=document.createElement('script');s.src='js/script.js';document.body.appendChild(s);"></script>
+</body>
+</html>
