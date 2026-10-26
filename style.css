@@ -1513,3 +1513,121 @@ a.contact-value:hover { color: var(--accent); text-decoration: underline; }
   border-radius: 50%;
   background: currentColor;
 }
+
+/* =========================================================
+   VISUELS ANIMÉS DES COMPÉTENCES (un par domaine)
+   ========================================================= */
+.skill-group { display: flex; flex-direction: column; }
+.skill-group .skill-art,
+.skill-group .design-art { margin-top: auto; padding-top: 0.5rem; }
+.skill-art { width: 100%; max-width: 100%; height: auto; overflow: visible; }
+
+.sa-board { fill: var(--bg); stroke: var(--line); stroke-dasharray: 4 4; }
+.sa-label { font: 600 8px var(--font-mono); fill: var(--muted); letter-spacing: 0.04em; }
+.sa-tag { font: 700 8px var(--font-mono); fill: var(--accent); letter-spacing: 0.06em; }
+.sa-link { fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-dasharray: 4 4; opacity: 0.8; }
+.sa-link--thin { stroke-width: 1; opacity: 0.5; }
+.sa-node { fill: var(--surface); stroke: var(--accent); stroke-width: 1.4; }
+.sa-root { fill: var(--accent); }
+.sa-ntext { font: 700 7.5px var(--font-mono); fill: var(--accent); text-anchor: middle; letter-spacing: 0.04em; }
+.sa-ntext--root { fill: var(--accent-ink); }
+.sa-user { fill: var(--muted); }
+.sa-gpo, .sa-packet { fill: var(--accent); stroke: var(--surface); stroke-width: 1.5; opacity: 0; }
+.sa-ports rect { fill: var(--accent-ink); opacity: 0.7; }
+.sa-screen { fill: var(--surface); stroke: var(--muted); stroke-width: 1.4; }
+.sa-ip { font: 600 7.5px var(--font-mono); fill: var(--muted); text-anchor: middle; }
+.sa-vmbox { fill: var(--surface); stroke: var(--line); stroke-width: 1.2; }
+.sa-vmname { font: 700 7.5px var(--font-mono); fill: var(--ink); letter-spacing: 0.03em; }
+.sa-meter { fill: var(--line); }
+.sa-fill { fill: var(--accent); transform-box: fill-box; transform-origin: left center; }
+.sa-fill--b { opacity: 0.55; }
+.sa-led { fill: var(--ok); }
+.sa-teeth { fill: none; stroke: var(--accent); stroke-width: 7; stroke-dasharray: 5 4.4; }
+.sa-gear--small .sa-teeth { stroke-width: 5; stroke-dasharray: 3.6 3.3; }
+.sa-hub { fill: var(--accent); }
+.sa-axle { fill: var(--surface); }
+.sa-gear { transform-box: fill-box; transform-origin: center; }
+.sa-key { font: 700 8px var(--font-mono); fill: var(--ink); }
+.sa-ok { font: 700 8px var(--font-mono); fill: var(--ok); }
+.sa-head { fill: var(--accent-soft); }
+.sa-gridline { fill: none; stroke: var(--line); stroke-width: 1; }
+.sa-cell { fill: var(--muted); opacity: 0.55; }
+.sa-select { fill: none; stroke: var(--accent); stroke-width: 1.6; }
+.sa-axis { fill: none; stroke: var(--muted); stroke-width: 1; }
+.sa-bar { fill: var(--accent); transform-box: fill-box; transform-origin: center bottom; }
+.sa-b2, .sa-b4 { opacity: 0.7; }
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Systèmes : flux GPO du DC vers les OU, OU puis utilisateurs qui s'allument */
+  .sa-link { animation: sa-flow 1.2s linear infinite; }
+  .sa-gpo { animation: sa-travel 3.6s ease-in-out infinite; }
+  .sa-gpo--1 { offset-path: path("M160 34 L60 56"); }
+  .sa-gpo--2 { offset-path: path("M160 34 L160 56"); animation-delay: 0.3s; }
+  .sa-gpo--3 { offset-path: path("M160 34 L260 56"); animation-delay: 0.6s; }
+  .art-sys .sa-ou .sa-node { animation: sa-ou 3.6s ease infinite; }
+  .art-sys .sa-ou:nth-of-type(2) .sa-node { animation-delay: 0.3s; }
+  .art-sys .sa-ou:nth-of-type(3) .sa-node { animation-delay: 0.6s; }
+  .art-sys .sa-user { animation: sa-user 3.6s ease infinite; }
+  .art-sys .sa-user:nth-of-type(n+3) { animation-delay: 0.3s; }
+  .art-sys .sa-user:nth-of-type(n+5) { animation-delay: 0.6s; }
+
+  /* Réseaux : paquets qui partent du switch vers chaque poste et reviennent */
+  .sa-packet { animation: sa-ping 2.8s ease-in-out infinite; }
+  .sa-p1 { offset-path: path("M130 58 L66 36"); }
+  .sa-p2 { offset-path: path("M190 58 L254 36"); animation-delay: 0.7s; }
+  .sa-p3 { offset-path: path("M130 58 L66 78"); animation-delay: 1.4s; }
+  .sa-p4 { offset-path: path("M190 58 L254 78"); animation-delay: 2.1s; }
+  .art-net .sa-screen { animation: sa-screen 2.8s ease infinite; }
+  .art-net .sa-host:nth-of-type(3) .sa-screen { animation-delay: 1.4s; }
+  .art-net .sa-host:nth-of-type(4) .sa-screen { animation-delay: 0.7s; }
+  .art-net .sa-host:nth-of-type(5) .sa-screen { animation-delay: 2.1s; }
+  .sa-ports rect { animation: sa-blink 0.9s steps(2) infinite; }
+  .sa-ports rect:nth-child(2n) { animation-delay: 0.45s; }
+
+  /* Virtualisation : les VM démarrent l'une après l'autre */
+  .sa-vm { transform-box: fill-box; transform-origin: center; animation: sa-vm 6s ease infinite; }
+  .sa-vm--2 { animation-delay: 0.5s; }
+  .sa-vm--3 { animation-delay: 1s; }
+  .art-vm .sa-fill { animation: sa-cpu 2.2s ease-in-out infinite alternate; }
+  .art-vm .sa-vm--2 .sa-fill { animation-duration: 1.7s; }
+  .art-vm .sa-vm--3 .sa-fill { animation-duration: 2.6s; }
+  .art-vm .sa-fill--b { animation-duration: 3.1s; }
+  .sa-led { animation: sa-led 6s ease infinite; }
+  .sa-led--2 { animation-delay: 0.5s; }
+  .sa-led--3 { animation-delay: 1s; }
+
+  /* Maintenance : engrenages + diagnostic */
+  .sa-gear { animation: sa-spin 4s linear infinite; }
+  .sa-gear--small { animation-direction: reverse; animation-duration: 2.4s; }
+  .art-mnt .sa-fill { animation: sa-scan 5.4s ease infinite; }
+  .art-mnt .sa-row--2 .sa-fill { animation-delay: 0.6s; }
+  .art-mnt .sa-row--3 .sa-fill { animation-delay: 1.2s; }
+  .sa-ok { animation: sa-ok 5.4s ease infinite; }
+  .sa-row--2 .sa-ok { animation-delay: 0.6s; }
+  .sa-row--3 .sa-ok { animation-delay: 1.2s; }
+
+  /* Bureautique : cellules saisies, sélection qui se déplace, barres qui montent */
+  .sa-cell { animation: sa-type 5s ease infinite; transform-box: fill-box; transform-origin: left center; }
+  .sa-c2 { animation-delay: 0.2s; } .sa-c3 { animation-delay: 0.4s; } .sa-c4 { animation-delay: 0.6s; }
+  .sa-c5 { animation-delay: 0.8s; } .sa-c6 { animation-delay: 1s; } .sa-c7 { animation-delay: 1.3s; }
+  .sa-select { animation: sa-select 5s steps(1) infinite; }
+  .sa-bar { animation: sa-grow 5s cubic-bezier(0.3, 1.3, 0.5, 1) infinite; }
+  .sa-b2 { animation-delay: 0.12s; } .sa-b3 { animation-delay: 0.24s; } .sa-b4 { animation-delay: 0.36s; } .sa-b5 { animation-delay: 0.48s; }
+}
+
+@keyframes sa-flow { to { stroke-dashoffset: -16; } }
+@keyframes sa-travel { 0% { offset-distance: 0%; opacity: 0; } 8% { opacity: 1; } 40% { offset-distance: 100%; opacity: 1; } 48%, 100% { offset-distance: 100%; opacity: 0; } }
+@keyframes sa-ou { 0%, 36% { fill: var(--surface); } 44%, 70% { fill: var(--accent-soft); } 100% { fill: var(--surface); } }
+@keyframes sa-user { 0%, 42% { fill: var(--muted); } 50%, 72% { fill: var(--accent); } 100% { fill: var(--muted); } }
+@keyframes sa-ping { 0% { offset-distance: 0%; opacity: 0; } 5% { opacity: 1; } 35% { offset-distance: 100%; } 65% { offset-distance: 0%; opacity: 1; } 70%, 100% { offset-distance: 0%; opacity: 0; } }
+@keyframes sa-screen { 0%, 28% { fill: var(--surface); } 34%, 48% { fill: var(--accent-soft); } 60%, 100% { fill: var(--surface); } }
+@keyframes sa-blink { 50% { opacity: 0.2; } }
+@keyframes sa-vm { 0% { opacity: 0; transform: translateY(8px) scale(0.92); } 10%, 85% { opacity: 1; transform: none; } 100% { opacity: 0; transform: translateY(-4px); } }
+@keyframes sa-cpu { from { transform: scaleX(0.2); } to { transform: scaleX(0.9); } }
+@keyframes sa-led { 0%, 12% { opacity: 0; } 18%, 85% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes sa-spin { to { transform: rotate(360deg); } }
+@keyframes sa-scan { 0% { transform: scaleX(0); } 30%, 88% { transform: scaleX(1); } 100% { transform: scaleX(0); } }
+@keyframes sa-ok { 0%, 30% { opacity: 0; } 36%, 88% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes sa-type { 0% { transform: scaleX(0); } 10%, 85% { transform: scaleX(1); } 100% { transform: scaleX(0); } }
+@keyframes sa-select { 0% { transform: translate(-70px, -30px); } 25% { transform: translate(-35px, -20px); } 50% { transform: translate(-70px, -10px); } 75% { transform: translate(0, 0); } }
+@keyframes sa-grow { 0%, 15% { transform: scaleY(0); } 40%, 85% { transform: scaleY(1); } 100% { transform: scaleY(0); } }

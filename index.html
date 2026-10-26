@@ -147,14 +147,58 @@
           <div class="skill-group">
             <h3 data-i18n="skills.systems">Systèmes</h3>
             <ul class="tags"><li>Windows</li><li>Windows Server</li><li>Active Directory</li><li>GPO</li></ul>
+            <svg class="skill-art art-sys" viewBox="0 0 320 96" role="img" data-i18n-attr="aria-label:art.sys" aria-label="Animation : arbre Active Directory avec contrôleur de domaine, unités d'organisation et utilisateurs">
+              <rect class="sa-board" x="4" y="4" width="312" height="88" rx="6"></rect>
+              <text class="sa-label" x="12" y="18">corp.local</text>
+              <path class="sa-link" d="M160 34 L60 56 M160 34 L160 56 M160 34 L260 56"></path>
+              <path class="sa-link sa-link--thin" d="M60 70 L44 80 M60 70 L76 80 M160 70 L144 80 M160 70 L176 80 M260 70 L244 80 M260 70 L276 80"></path>
+              <rect class="sa-node sa-root" x="138" y="20" width="44" height="16" rx="4"></rect>
+              <text class="sa-ntext sa-ntext--root" x="160" y="31">DC</text>
+              <g class="sa-ou"><rect class="sa-node" x="40" y="56" width="40" height="14" rx="3"></rect><text class="sa-ntext" x="60" y="66">OU</text></g>
+              <g class="sa-ou"><rect class="sa-node" x="140" y="56" width="40" height="14" rx="3"></rect><text class="sa-ntext" x="160" y="66">OU</text></g>
+              <g class="sa-ou"><rect class="sa-node" x="240" y="56" width="40" height="14" rx="3"></rect><text class="sa-ntext" x="260" y="66">OU</text></g>
+              <circle class="sa-user" cx="44" cy="83" r="4"></circle><circle class="sa-user" cx="76" cy="83" r="4"></circle>
+              <circle class="sa-user" cx="144" cy="83" r="4"></circle><circle class="sa-user" cx="176" cy="83" r="4"></circle>
+              <circle class="sa-user" cx="244" cy="83" r="4"></circle><circle class="sa-user" cx="276" cy="83" r="4"></circle>
+              <circle class="sa-gpo sa-gpo--1" r="3"></circle>
+              <circle class="sa-gpo sa-gpo--2" r="3"></circle>
+              <circle class="sa-gpo sa-gpo--3" r="3"></circle>
+              <text class="sa-tag" x="292" y="18" text-anchor="end">GPO</text>
+            </svg>
           </div>
           <div class="skill-group">
             <h3 data-i18n="skills.network">Réseaux</h3>
             <ul class="tags"><li>TCP/IP</li><li>IPv4</li><li>DNS</li><li>DHCP</li><li>LAN</li></ul>
+            <svg class="skill-art art-net" viewBox="0 0 320 96" role="img" data-i18n-attr="aria-label:art.net" aria-label="Animation : réseau local avec un switch et quatre postes qui échangent des paquets">
+              <rect class="sa-board" x="4" y="4" width="312" height="88" rx="6"></rect>
+              <text class="sa-label" x="12" y="18">LAN 192.168.1.0/24</text>
+              <path class="sa-link" d="M130 58 L66 36 M130 58 L66 78 M190 58 L254 36 M190 58 L254 78"></path>
+              <rect class="sa-node sa-root" x="130" y="50" width="60" height="16" rx="3"></rect>
+              <g class="sa-ports"><rect x="138" y="60" width="5" height="3"></rect><rect x="147" y="60" width="5" height="3"></rect><rect x="156" y="60" width="5" height="3"></rect><rect x="165" y="60" width="5" height="3"></rect><rect x="174" y="60" width="5" height="3"></rect></g>
+              <text class="sa-ntext sa-ntext--root" x="160" y="58">SWITCH</text>
+              <g class="sa-host"><rect class="sa-screen" x="36" y="28" width="30" height="18" rx="2"></rect><text class="sa-ip" x="51" y="56">.10</text></g>
+              <g class="sa-host"><rect class="sa-screen" x="36" y="70" width="30" height="16" rx="2"></rect><text class="sa-ip" x="26" y="82" text-anchor="end">.11</text></g>
+              <g class="sa-host"><rect class="sa-screen" x="254" y="28" width="30" height="18" rx="2"></rect><text class="sa-ip" x="269" y="56">.12</text></g>
+              <g class="sa-host"><rect class="sa-screen" x="254" y="70" width="30" height="16" rx="2"></rect><text class="sa-ip" x="294" y="82" text-anchor="start">.13</text></g>
+              <circle class="sa-packet sa-p1" r="3"></circle>
+              <circle class="sa-packet sa-p2" r="3"></circle>
+              <circle class="sa-packet sa-p3" r="3"></circle>
+              <circle class="sa-packet sa-p4" r="3"></circle>
+            </svg>
           </div>
           <div class="skill-group">
             <h3 data-i18n="skills.virtual">Virtualisation</h3>
             <ul class="tags"><li>VMware Workstation</li></ul>
+            <svg class="skill-art art-vm" viewBox="0 0 320 96" role="img" data-i18n-attr="aria-label:art.vm" aria-label="Animation : un hôte VMware démarre trois machines virtuelles">
+              <rect class="sa-board" x="4" y="4" width="312" height="88" rx="6"></rect>
+              <text class="sa-label" x="12" y="18">VMware Workstation</text>
+              <g class="sa-vm sa-vm--1"><rect class="sa-vmbox" x="16" y="28" width="92" height="54" rx="4"></rect><text class="sa-vmname" x="24" y="42">VM-DC01</text><rect class="sa-meter" x="24" y="52" width="76" height="5" rx="2"></rect><rect class="sa-fill" x="24" y="52" width="76" height="5" rx="2"></rect><rect class="sa-meter" x="24" y="64" width="76" height="5" rx="2"></rect><rect class="sa-fill sa-fill--b" x="24" y="64" width="76" height="5" rx="2"></rect></g>
+              <g class="sa-vm sa-vm--2"><rect class="sa-vmbox" x="114" y="28" width="92" height="54" rx="4"></rect><text class="sa-vmname" x="122" y="42">VM-SRV</text><rect class="sa-meter" x="122" y="52" width="76" height="5" rx="2"></rect><rect class="sa-fill" x="122" y="52" width="76" height="5" rx="2"></rect><rect class="sa-meter" x="122" y="64" width="76" height="5" rx="2"></rect><rect class="sa-fill sa-fill--b" x="122" y="64" width="76" height="5" rx="2"></rect></g>
+              <g class="sa-vm sa-vm--3"><rect class="sa-vmbox" x="212" y="28" width="92" height="54" rx="4"></rect><text class="sa-vmname" x="220" y="42">VM-CLIENT</text><rect class="sa-meter" x="220" y="52" width="76" height="5" rx="2"></rect><rect class="sa-fill" x="220" y="52" width="76" height="5" rx="2"></rect><rect class="sa-meter" x="220" y="64" width="76" height="5" rx="2"></rect><rect class="sa-fill sa-fill--b" x="220" y="64" width="76" height="5" rx="2"></rect></g>
+              <circle class="sa-led sa-led--1" cx="100" cy="38" r="2.5"></circle>
+              <circle class="sa-led sa-led--2" cx="198" cy="38" r="2.5"></circle>
+              <circle class="sa-led sa-led--3" cx="296" cy="38" r="2.5"></circle>
+            </svg>
           </div>
           <div class="skill-group">
             <h3 data-i18n="skills.maintenance">Maintenance</h3>
@@ -163,10 +207,41 @@
               <li data-i18n="skills.m3">Diagnostic</li><li data-i18n="skills.m4">Dépannage</li>
               <li data-i18n="skills.m5">Imprimantes</li>
             </ul>
+            <svg class="skill-art art-mnt" viewBox="0 0 320 96" role="img" data-i18n-attr="aria-label:art.mnt" aria-label="Animation : un engrenage tourne pendant qu'un diagnostic valide le processeur, la mémoire et le disque">
+              <rect class="sa-board" x="4" y="4" width="312" height="88" rx="6"></rect>
+              <text class="sa-label" x="12" y="18">diagnostic.log</text>
+              <g class="sa-gear"><circle class="sa-teeth" cx="52" cy="56" r="20"></circle><circle class="sa-hub" cx="52" cy="56" r="13"></circle><circle class="sa-axle" cx="52" cy="56" r="4.5"></circle></g>
+              <g class="sa-gear sa-gear--small"><circle class="sa-teeth" cx="86" cy="36" r="11"></circle><circle class="sa-hub" cx="86" cy="36" r="7"></circle></g>
+              <g class="sa-row sa-row--1"><text class="sa-key" x="116" y="38">CPU</text><rect class="sa-meter" x="150" y="32" width="110" height="6" rx="3"></rect><rect class="sa-fill" x="150" y="32" width="110" height="6" rx="3"></rect><text class="sa-ok" x="270" y="38">OK</text></g>
+              <g class="sa-row sa-row--2"><text class="sa-key" x="116" y="58">RAM</text><rect class="sa-meter" x="150" y="52" width="110" height="6" rx="3"></rect><rect class="sa-fill" x="150" y="52" width="110" height="6" rx="3"></rect><text class="sa-ok" x="270" y="58">OK</text></g>
+              <g class="sa-row sa-row--3"><text class="sa-key" x="116" y="78">DISK</text><rect class="sa-meter" x="150" y="72" width="110" height="6" rx="3"></rect><rect class="sa-fill" x="150" y="72" width="110" height="6" rx="3"></rect><text class="sa-ok" x="270" y="78">OK</text></g>
+            </svg>
           </div>
           <div class="skill-group">
             <h3 data-i18n="skills.office">Bureautique</h3>
             <ul class="tags"><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>
+            <svg class="skill-art art-off" viewBox="0 0 320 96" role="img" data-i18n-attr="aria-label:art.off" aria-label="Animation : un tableur se remplit et un graphique en barres se construit">
+              <rect class="sa-board" x="4" y="4" width="312" height="88" rx="6"></rect>
+              <text class="sa-label" x="12" y="18">data.xlsx</text>
+              <g class="sa-grid">
+                <rect class="sa-head" x="16" y="26" width="140" height="11"></rect>
+                <path class="sa-gridline" d="M16 26 H156 M16 37 H156 M16 48 H156 M16 59 H156 M16 70 H156 M16 81 H156 M16 26 V81 M51 26 V81 M86 26 V81 M121 26 V81 M156 26 V81"></path>
+                <rect class="sa-cell sa-c1" x="54" y="40" width="28" height="5" rx="1"></rect>
+                <rect class="sa-cell sa-c2" x="89" y="40" width="22" height="5" rx="1"></rect>
+                <rect class="sa-cell sa-c3" x="54" y="51" width="18" height="5" rx="1"></rect>
+                <rect class="sa-cell sa-c4" x="89" y="51" width="28" height="5" rx="1"></rect>
+                <rect class="sa-cell sa-c5" x="54" y="62" width="24" height="5" rx="1"></rect>
+                <rect class="sa-cell sa-c6" x="89" y="62" width="16" height="5" rx="1"></rect>
+                <rect class="sa-cell sa-c7" x="124" y="73" width="26" height="5" rx="1"></rect>
+                <rect class="sa-select" x="121" y="70" width="35" height="11"></rect>
+              </g>
+              <path class="sa-axis" d="M178 82 H304 M178 82 V28"></path>
+              <rect class="sa-bar sa-b1" x="188" y="50" width="16" height="32" rx="2"></rect>
+              <rect class="sa-bar sa-b2" x="212" y="38" width="16" height="44" rx="2"></rect>
+              <rect class="sa-bar sa-b3" x="236" y="58" width="16" height="24" rx="2"></rect>
+              <rect class="sa-bar sa-b4" x="260" y="32" width="16" height="50" rx="2"></rect>
+              <rect class="sa-bar sa-b5" x="284" y="44" width="16" height="38" rx="2"></rect>
+            </svg>
           </div>
           <div class="skill-group">
             <h3 data-i18n="skills.design">Design graphique</h3>

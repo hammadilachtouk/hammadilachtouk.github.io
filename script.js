@@ -83,6 +83,11 @@
       "skills.office": "Bureautique",
       "skills.design": "Design graphique",
       "skills.designArt": "Animation : un tracé à la plume se dessine sur un plan de travail",
+      "art.sys": "Animation : arbre Active Directory avec contrôleur de domaine, unités d'organisation et utilisateurs",
+      "art.net": "Animation : réseau local avec un switch et quatre postes qui échangent des paquets",
+      "art.vm": "Animation : un hôte VMware démarre trois machines virtuelles",
+      "art.mnt": "Animation : un engrenage tourne pendant qu'un diagnostic valide le processeur, la mémoire et le disque",
+      "art.off": "Animation : un tableur se remplit et un graphique en barres se construit",
       "skills.photo": "Photographie",
       "skills.video": "Vidéo",
 
@@ -251,6 +256,11 @@
       "skills.office": "Office",
       "skills.design": "Graphic design",
       "skills.designArt": "Animation: a pen-tool path being drawn on an artboard",
+      "art.sys": "Animation: Active Directory tree with a domain controller, organizational units and users",
+      "art.net": "Animation: local network with a switch and four computers exchanging packets",
+      "art.vm": "Animation: a VMware host starting three virtual machines",
+      "art.mnt": "Animation: a gear turning while a diagnostic checks the CPU, memory and disk",
+      "art.off": "Animation: a spreadsheet filling up and a bar chart building",
       "skills.photo": "Photography",
       "skills.video": "Video",
 
