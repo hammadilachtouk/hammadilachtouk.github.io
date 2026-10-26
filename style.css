@@ -1429,3 +1429,87 @@ a.contact-value:hover { color: var(--accent); text-decoration: underline; }
   .header-tools { gap: 0.35rem; }
   .icon-btn { width: 36px; height: 36px; }
 }
+
+/* =========================================================
+   ANIMATION « DESIGN GRAPHIQUE » : tracé à la plume
+   ========================================================= */
+.design-art {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin-top: 0.25rem;
+  overflow: visible;
+}
+.da-board { fill: var(--bg); stroke: var(--line); stroke-dasharray: 4 4; }
+.da-label { font: 600 8px var(--font-mono); fill: var(--muted); letter-spacing: 0.04em; }
+.da-curve {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 0;
+}
+.da-handle { fill: none; stroke: var(--muted); stroke-width: 1; opacity: 0.7; }
+.da-knob { fill: var(--surface); stroke: var(--muted); stroke-width: 1.2; }
+.da-anchor { fill: var(--surface); stroke: var(--accent); stroke-width: 1.6; }
+.da-pen { fill: var(--ink); opacity: 0; }
+.da-pen circle { fill: var(--surface); }
+.da-sw:nth-child(1) { fill: var(--pair-orange); }
+.da-sw:nth-child(2) { fill: var(--pair-green); }
+.da-sw:nth-child(3) { fill: var(--pair-blue); }
+.da-sw:nth-child(4) { fill: var(--accent); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .da-curve { animation: da-draw 4.8s cubic-bezier(0.6, 0, 0.3, 1) infinite; }
+  .da-pen {
+    offset-path: path("M24 76 C 64 16, 118 22, 160 52 S 262 86, 296 30");
+    offset-rotate: 0deg;
+    offset-anchor: 7px 5px;
+    animation: da-pen 4.8s cubic-bezier(0.6, 0, 0.3, 1) infinite;
+  }
+  .da-anchor { transform-box: fill-box; transform-origin: center; animation: da-pop 4.8s ease infinite; }
+  .da-anchor--2 { animation-name: da-pop2; }
+  .da-anchor--3 { animation-name: da-pop3; }
+  .da-handle, .da-knob { animation: da-handles 4.8s ease infinite; }
+  .da-sw { transform-box: fill-box; transform-origin: center; animation: da-sw 2.4s ease-in-out infinite; }
+  .da-sw:nth-child(2) { animation-delay: 0.15s; }
+  .da-sw:nth-child(3) { animation-delay: 0.3s; }
+  .da-sw:nth-child(4) { animation-delay: 0.45s; }
+}
+@keyframes da-draw {
+  0% { stroke-dashoffset: 1; }
+  55%, 85% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+@keyframes da-pen {
+  0% { offset-distance: 0%; opacity: 1; }
+  55% { offset-distance: 100%; opacity: 1; }
+  65%, 100% { offset-distance: 100%; opacity: 0; }
+}
+@keyframes da-pop  { 0%, 2% { transform: scale(0); } 6%, 90% { transform: scale(1); } 100% { transform: scale(0); } }
+@keyframes da-pop2 { 0%, 26% { transform: scale(0); } 31%, 90% { transform: scale(1); } 100% { transform: scale(0); } }
+@keyframes da-pop3 { 0%, 53% { transform: scale(0); } 58%, 90% { transform: scale(1); } 100% { transform: scale(0); } }
+@keyframes da-handles { 0%, 28% { opacity: 0; } 34%, 88% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes da-sw { 0%, 100% { transform: translateY(0); } 30% { transform: translateY(-5px); } }
+
+/* Date des événements (classés du plus récent au plus ancien) */
+.event-date {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font: 600 0.78rem var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+.event-date::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
