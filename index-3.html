@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hammadi Lachtouk | Technicien Informatique &amp; Réseaux</title>
+<meta name="description" content="Portfolio de Hammadi Lachtouk, technicien informatique et réseaux à Casablanca.">
+<style>
+  html,body{margin:0;height:100%;background:#0b0b0c;color:#f3f1ea;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+  body{display:grid;place-items:center;text-align:center;padding:24px;box-sizing:border-box}
+  p{opacity:.7;font-size:14px}
+  a{color:#c6ff3d;margin:0 8px}
+</style>
+<script>
+  // Un design différent à chaque visite : on tourne dans la liste.
+  (function () {
+    var designs = ["design-cinema.html", "design-lumora.html", "design-lime.html"];
+    var next;
+    try {
+      var last = parseInt(localStorage.getItem("hl-design"), 10);
+      next = isNaN(last) ? Math.floor(Math.random() * designs.length) : (last + 1) % designs.length;
+      localStorage.setItem("hl-design", String(next));
+    } catch (e) {
+      next = Math.floor(Math.random() * designs.length);
+    }
+    location.replace(designs[next] + location.hash);
+  })();
+</script>
+</head>
+<body>
+  <div>
+    <h1 style="font-weight:600">Hammadi Lachtouk</h1>
+    <p>Choisissez un design :</p>
+    <p><a href="design-cinema.html">Cinéma</a> · <a href="design-lumora.html">Lumora</a> · <a href="design-lime.html">Lime</a></p>
+  </div>
+</body>
+</html>
